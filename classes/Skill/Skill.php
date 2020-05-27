@@ -2,6 +2,7 @@
 
 namespace Skill;
 
+use Helper\GeneralHelper;
 use Skill\Interfaces\SkillInterface;
 
 class Skill implements SkillInterface
@@ -64,5 +65,10 @@ class Skill implements SkillInterface
     public function isForAttack(): bool
     {
         return $this->isForAttack;
+    }
+
+    public function mayUseIt() : bool
+    {
+        return GeneralHelper::imLucky($this->chance);
     }
 }

@@ -4,8 +4,8 @@ namespace Stats\Interfaces;
 
 interface StatsInterface
 {
-    public function setName($name);
-    public function setValue($value);
+    public function setName(string $name);
+    public function setValue(int $value);
     public function getName();
     public function getValue();
 }

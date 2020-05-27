@@ -9,6 +9,7 @@ class RapidStrike extends Skill
 
     public function __construct()
     {
+        $this->setName("Rapid Strike");
         $this->setChance(10);
         $this->setValue(2);
     }

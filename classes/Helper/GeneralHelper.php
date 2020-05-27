@@ -8,4 +8,9 @@ class GeneralHelper
     {
         return rand($from, $to);
     }
+
+    public static function imLucky(int $percentage) : int
+    {
+        return rand(0, 100) < $percentage;
+    }
 }

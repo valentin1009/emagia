@@ -10,6 +10,7 @@ class MagicShield extends Skill
 
     public function __construct()
     {
+        $this->setName("Magic Shield");
         $this->setChance(50);
         $this->setValue(0.5);
     }

@@ -8,19 +8,19 @@ class Round
 {
     const MAX_ROUND_NBR = 20;
 
-    public $currentRound = 1;
+    protected $_currentRound = 1;
     public Player $attacker;
     public Player $defender;
 
     public function nextRound()
     {
-        $this->currentRound++;
+        $this->_currentRound++;
         $this->switchRoles();
     }
 
     public function areRoundsLeft()
     {
-        return $this->currentRound <= self::MAX_ROUND_NBR;
+        return $this->_currentRound <= self::MAX_ROUND_NBR;
     }
 
     public function switchRoles()
@@ -28,5 +28,21 @@ class Round
         $tmpAttacker = $this->attacker;
         $this->attacker = $this->defender;
         $this->defender = $tmpAttacker;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCurrentRound(): int
+    {
+        return $this->_currentRound;
+    }
+
+    /**
+     * @param int $currentRound
+     */
+    public function setCurrentRound(int $currentRound): void
+    {
+        $this->_currentRound = $currentRound;
     }
 }
