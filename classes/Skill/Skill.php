@@ -67,6 +67,9 @@ class Skill implements SkillInterface
         return $this->isForAttack;
     }
 
+    /**
+     * @return bool
+     */
     public function mayUseIt() : bool
     {
         return GeneralHelper::imLucky($this->chance);

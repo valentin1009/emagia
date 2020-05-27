@@ -10,6 +10,11 @@ use Stats\Options\Speed;
 
 class GameHelper
 {
+    /**
+     * @param Orderus $hero
+     * @param Generic $monster
+     * @return Player
+     */
     public static function whoIsFirst(Orderus $hero, Generic $monster) : Player
     {
         $heroSpeed = $hero->getStatsValue(Speed::class);
@@ -25,7 +30,15 @@ class GameHelper
         return $heroLuck > $monsterLuck ? $hero : $monster;
     }
 
-    public static function convertStatsToSign(int $firstPlayerValue,int $secondPlayerValue, string $sign, string $signRest = null, $reverse = false)
+    /**
+     * @param int $firstPlayerValue
+     * @param int $secondPlayerValue
+     * @param string $sign
+     * @param string|null $signRest
+     * @param bool $reverse
+     * @return string
+     */
+    public static function convertStatsToSign(int $firstPlayerValue, int $secondPlayerValue, string $sign, string $signRest = null, $reverse = false)
     {
         $firstPlayerPoints = max(ceil($firstPlayerValue / 10), 0);
         $secondPlayerPoints = max(ceil($secondPlayerValue / 10), 0);
@@ -53,6 +66,11 @@ class GameHelper
         return implode(" | ", $output);
     }
 
+    /**
+     * @param $attackerStrength
+     * @param $defenderDefence
+     * @return mixed
+     */
     public static function calcAttackFormula($attackerStrength, $defenderDefence)
     {
         return $attackerStrength - $defenderDefence;

@@ -3,6 +3,9 @@
 namespace Game;
 
 class Output{
+    /**
+     * @var array
+     */
     public $stack = [];
 
     /**
@@ -13,6 +16,9 @@ class Output{
         $this->stack[] = $msg;
     }
 
+    /**
+     *
+     */
     public function displayAll() : void
     {
         if (!empty($this->stack)) {

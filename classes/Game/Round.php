@@ -12,17 +12,26 @@ class Round
     public Player $attacker;
     public Player $defender;
 
+    /**
+     *
+     */
     public function nextRound()
     {
         $this->_currentRound++;
         $this->switchRoles();
     }
 
+    /**
+     * @return bool
+     */
     public function areRoundsLeft()
     {
         return $this->_currentRound <= self::MAX_ROUND_NBR;
     }
 
+    /**
+     *
+     */
     public function switchRoles()
     {
         $tmpAttacker = $this->attacker;
